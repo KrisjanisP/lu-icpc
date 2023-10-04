@@ -1,0 +1,4 @@
+.git/
+.gitignore
+.jekyll-cache/
+_site/
