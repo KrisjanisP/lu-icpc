@@ -5,6 +5,7 @@ permalink: /
 ---
 
 ICPC ICPC ICPC ICPC JAAAA
+Te bija Kristiņš
 
 SPARSE TABLE LESS GOO
 
