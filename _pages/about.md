@@ -7,3 +7,9 @@ layout: post
 ---
 
 This is an about page.
+
+Krišjānis Petručeņa
+
+Matīss Kristiņš
+
+Valters Kalniņš
