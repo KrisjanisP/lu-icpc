@@ -7,10 +7,10 @@ permalink: /
 ICPC ICPC ICPC ICPC JAAAA
 
 Te bija Kristiņš
+[mysterious link](https://youtu.be/dQw4w9WgXcQ?si=dFk5vydQHIC3cDFd) <- Veiksmi jums ICPC :)
 
-
-The well known Pythagorean theorem $$ x^2 + y^2 = z^2 $$ was 
-proved to be invalid for other exponents. 
+The well known Pythagorean theorem $$ x^2 + y^2 = z^2 $$ was
+proved to be invalid for other exponents.
 Meaning the next equation has no integer solutions:
 $$x^n + y^n = z^n$$
 
@@ -51,4 +51,3 @@ public:
     }
 };
 ```
-
