@@ -12,12 +12,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    - name: Docker metadata
-      id: meta
-      uses: docker/metadata-action@v4
-      with:
-        images: krisjanisp/icpc-docs
-
     - name: Login to DockerHub
       uses: docker/login-action@v2
       with:
@@ -29,8 +23,7 @@ jobs:
       with:
         context: .
         push: ${{ github.event_name != 'pull_request' }}
-        tags: ${{ steps.meta.outputs.tags }}
-        labels: ${{ steps.meta.outputs.labels }}
+        tags: krisjanisp/icpc-docs:latest
 
     - name: Install doctl
       uses: digitalocean/action-doctl@v2
@@ -45,7 +38,7 @@ jobs:
 
     - name: Replace manifest tokens
       run: |
-        sed -e 's/latest/${{env.DOCKER_METADATA_OUTPUT_VERSION}}/g' \
+        sed -e 's/latest/latest/g' \
             < ./kubernetes/icpc_deployment.yaml > ./kubernetes/gucci_deployment.yaml
 
     - name: Log manifest
