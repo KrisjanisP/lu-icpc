@@ -102,7 +102,7 @@ DEPENDENCIES
   jekyll-readme-index
   jekyll-remote-theme
   jemoji
-  kramdown-syntax-coderay
+  kramdown-syntax-coderay (~> 1.0)
   webrick
 
 BUNDLED WITH
