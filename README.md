@@ -4,50 +4,123 @@ title: ICPC :)
 permalink: /
 ---
 
-ICPC ICPC ICPC ICPC JAAAA
+## 2023 team
 
-Te bija Kristiņš
-[mysterious link](https://youtu.be/dQw4w9WgXcQ?si=dFk5vydQHIC3cDFd) <- Veiksmi jums ICPC :)
+- Matīss Kristiņš
+- Valters Kalniņš
+- Krišjānis Petručeņa
 
-The well known Pythagorean theorem $$ x^2 + y^2 = z^2 $$ was
-proved to be invalid for other exponents.
-Meaning the next equation has no integer solutions:
-$$x^n + y^n = z^n$$
+## Roadmap
 
-SPARSE TABLE LESS GOO
+### 1. Graph Algorithms
+   - Dijkstra's Algorithm
+   - Bellman-Ford Algorithm
+   - Floyd-Warshall Algorithm
+   - Kruskal's Algorithm
+   - Prim's Algorithm
+   - Topological Sort
+   - Strongly Connected Components (Tarjan's/ Kosaraju's algorithms)
+   - Maximum Flow (Ford-Fulkerson, Edmonds-Karp)
+   - Minimum Cut
 
-```c++
-#pragma once
-#include <bits/stdc++.h>
+### 2. Dynamic Programming
+   - Longest Increasing Subsequence
+   - Longest Common Subsequence
+   - Knapsack Problems (0/1, Unbounded)
+   - Coin Change
+   - Edit Distance
+   - Matrix Chain Multiplication
 
-template <typename T>
-class SparseTable {
-    T** st; // layer, starting index
-    int n, k; // indices, layers
-public:
-    SparseTable(T a[], int n) {
-        this->n = n;
-        k = 1;
-        while ((1 << k) <= n) k++;
-        st = new T*[k];
-        for (int i = 0; i < k; i++) {
-            st[i] = new T[n];
-            for (int j = 0; j < n; j++) {
-                if (i == 0) st[i][j] = a[j];
-                else if (j + (1 << i) - 1 < n) {
-                    st[i][j] = std::min(st[i - 1][j], st[i - 1][j + (1 << (i - 1))]);
-                }
-            }
-        }
-    }
-    SparseTable(std::vector<T> v) : SparseTable(v.data(), v.size()) {}
-    ~SparseTable() {
-        for (int i = 0; i < k; i++) delete[] st[i];
-        delete[] st;
-    }
-    T query(int l, int r) {
-        int j = 0; while ((1 << (j+1)) <= r - l + 1) j++;
-        return std::min(st[j][l], st[j][r - (1 << j) + 1]);
-    }
-};
-```
+### 3. Geometry
+   - Convex Hull (Graham's Scan, Jarvis March)
+   - Line Intersection
+   - Point in Polygon
+   - Polygon Area
+   - Circle-Line Intersection
+   - Circle-Circle Intersection
+   - Closest Pair of Points
+
+### 4. Number Theory
+   - Extended Euclidean Algorithm
+   - Modular Arithmetic
+   - Euler’s Totient Function
+   - Fermat’s Little Theorem
+   - Sieve of Eratosthenes
+   - Prime Factorization
+   - Modular Inverse
+   - Chinese Remainder Theorem
+
+### 5. String Algorithms
+   - KMP Algorithm
+   - Rabin-Karp Algorithm
+   - Z-Algorithm
+   - Suffix Array/Tree
+   - Trie
+   - Aho-Corasick Algorithm
+
+### 6. Data Structures
+   - Linked List
+   - Binary Trees
+   - Segment Trees
+   - Fenwick Trees (Binary Indexed Trees)
+   - Disjoint Set Union (DSU)
+   - Trie
+   - Heap/Priority Queue
+
+### 7. Sorting Algorithms
+   - Quick Sort
+   - Radix Sort
+   - Heap Sort
+
+### 8. Searching Algorithms
+   - Ternary Search
+
+### 9. Greedy Algorithms
+   - Activity Selection/ Scheduling
+   - Huffman Coding
+   - Fractional Knapsack
+
+### 10. Combinatorial Algorithms
+   - Backtracking
+   - Permutations/Combinations
+   - Subset Sum
+   - Traveling Salesman Problem (TSP)
+
+### 11. Mathematics
+   - Fast Exponentiation (Binary Exponentiation)
+   - Permutation Coefficients
+   - Gaussian Elimination
+   - Pascal's Triangle
+
+### 12. Computational Geometry
+   - Line Sweep Algorithms
+   - Rotating Calipers
+   - Voronoi Diagrams
+
+### 13. Game Theory
+   - Nim Game
+   - Grundy Numbers
+   - Minimax Algorithm
+   - Alpha-Beta Pruning
+
+### 14. Miscellaneous
+   - Bitwise Operations
+   - Sliding Window Technique
+   - Two Pointer Technique
+   - Meet in the Middle
+   - Mo's Algorithm
+
+### 15. Coding Paradigms
+   - Divide and Conquer
+   - Recursion
+   - Memoization
+
+### 16. Network Flow Algorithms
+   - Bipartite Matching
+   - Min-Cost Max-Flow
+   - Circulation Demand
+
+### 17. Approximation Algorithms
+   - Vertex Cover
+   - Set Cover
+   - TSP Approximation
