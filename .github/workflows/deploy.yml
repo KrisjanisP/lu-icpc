@@ -19,6 +19,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Build and push to DH
+      id: docker_build
       uses: docker/build-push-action@v4
       with:
         context: .
@@ -38,7 +39,7 @@ jobs:
 
     - name: Replace manifest tokens
       run: |
-        sed -e 's/latest/latest/g' \
+        sed -e 's/:latest/@${{ steps.docker_build.outputs.digest }}/g' \
             < ./kubernetes/icpc_deployment.yaml > ./kubernetes/gucci_deployment.yaml
 
     - name: Log manifest
